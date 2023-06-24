@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{layouts/main}"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+
+<section layout:fragment="custom-content">
+
+<div class="container">
+    <!--...-->
+    <h1><th th:text="#{pozdro}"></th></h1>
+    <h2><th th:text="#{ziom}"></th></h2>
+    <h3><th th:text="#{java}"></th></h3>
+
+    <table class="table table-striped">
+        <tr>
+<!--            change of language here-->
+            <th th:text="#{animal.specie}"></th>
+            <th th:text="#{animal.name}">name</th>
+            <th th:text="#{animal.alive}"></th>
+        </tr>
+<!--        access here-->
+        <tr th:each="animal:${animals}">
+            <td th:text="${animal.specie}"></td>
+            <td th:text="${animal.name}"></td>
+            <td th:text="${animal.alive}"></td>
+        </tr>
+    </table>
+
+    <div class="col col-5">
+        <ul class="list-group">
+            <li class="list-group-item" th:each="animal: ${animals}">
+                <span th:text="${animal.name}"></span>
+            </li>
+        </ul>
+    </div>
+
+    <p>number of animals
+        <span th:text="${animals.size()}"></span></p>
+
+</div>
+
+</section>
+</body>
+</html>

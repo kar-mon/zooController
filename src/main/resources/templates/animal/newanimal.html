@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{layouts/main}"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>new animal</title>
+
+
+</head>
+<body>
+
+<section layout:fragment="custom-content">
+
+<div class="container">
+    <section class="top">
+        <header>
+            <h2>create new animal</h2>
+            <p>add new animal to our mobile zoo</p>
+        </header>
+
+        <form th:action="@{/animal/add}" method="post" th:object="${animal}">
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="specie" class="col-form-label">specie</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="specie" class="form-control" th:field="*{specie}" placeholder="specie">
+                </div>
+                <div class="col-auto">
+                </div>
+
+                <div class="col-auto">
+                    <label for="specie" class="col-form-label">specie</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="name" class="form-control" th:field="*{name}" placeholder="name">
+                </div>
+                <div class="col-auto">
+                </div>
+
+                <div class="col-auto">
+                    <label for="alive" class="col-form-label">alive</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="alive" class="form-control" th:field="*{alive}" placeholder="alive">
+                </div>
+                <div class="col-auto">
+                </div>
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Save">
+            <!--  <input type="text" id="name" th:field="*{name}" placeholder="name">
+            <input type="text" id="alive" th:field="*{alive}" placeholder="is it alive?">
+            <button type="submit">Save</button> -->
+        </form>
+    </section>
+</div>
+
+
+
+</section>
+</div>
+
+</body>
+</html>
